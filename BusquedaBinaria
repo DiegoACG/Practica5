@@ -1,0 +1,30 @@
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+int main(int argc, char** argv) {
+	srand(time(NULL));
+	int vector[10], aux, numbuscar;
+	for(int i=0; i<10; i++){
+		vector[i]=(rand()%10)+1;
+	}
+	for(int i=0; i<10; i++){
+		printf("%d - ",vector[i]);
+	}
+	for(int k=0; k<10; k++){
+		for(int j=0; j<10; j++){
+			if(vector[j]>vector[j+1]){
+				aux=vector[j+1];
+				vector[j+1]=vector[j];
+				vector[j]=aux;
+			}
+		}
+	}
+	printf("\n\n");
+	for(int i=0; i<10; i++){
+		printf("%d - ",vector[i]);
+	}
+	printf("Introduce el numero a buscar; ");
+	scanf("%d", &numbuscar);
+	return 0;
+}
